@@ -12,7 +12,6 @@ class App extends Component {
     }
   }
 
-
   componentDidMount() {
     Promise.all([
       fetch('https://swapi.co/api/people').then(response => response.json()),
@@ -21,7 +20,6 @@ class App extends Component {
     ])
     .then(data => this.setState({people: data[0], planets: data[1], vehicles: data[2] }))
   }
-
 
   render() {
     return (
@@ -35,9 +33,5 @@ class App extends Component {
     }
 
 }
-
-
-
-
 
 export default App;
