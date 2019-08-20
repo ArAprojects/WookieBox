@@ -6,16 +6,21 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      people: ''
+      people: [],
+      planets: [],
+      vehicles: [],
+      favorites: []
     }
   }
 
 
   componentDidMount() {
     Promise.all([
-      fetch('https://swapi.co/api/people/1/').then(response => response.json())
-      .then(person => this.setState({people: person}))
+      fetch('https://swapi.co/api/people/').then(response => response.json()),
+      fetch('https://swapi.co/api/planets/').then(response => response.json()),
+      fetch('https://swapi.co/api/vehicles/').then(response => response.json())
     ])
+    .then(data => this.setState({people: data[0], planets: [1], vehicles: [2]}))
   }
 
   
@@ -23,9 +28,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>WookieBoxxxxxx</h1>
+          <h1>WookieBox</h1>
         </header>
-        <Container peopleData = {this.state.people}/>
+        <Container peopleData = {this.state.people} planetData = {this.state.planets} vehicleData = {this.state.vehicles}/>
       </div>
     );
     }
