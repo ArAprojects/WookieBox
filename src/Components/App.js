@@ -44,13 +44,12 @@ const promises = dataArray.map(item => {
 return Promise.all(promises);
 };
 
-
   render() {
     console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
-          <h1>WookieBoxxxxxx</h1>
+          <h1>WookieBox</h1>
         </header>
         <button>Planets</button>
         <Container peopleData = {this.state.people} planetData = {this.state.planets} vehicleData = {this.state.vehicles}/>
