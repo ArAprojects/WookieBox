@@ -1,11 +1,12 @@
 import React from 'react';
 import './Container.css';
+import Card from './Card.js';
 
 const Container = (props) => {
-  console.log(props)
   return (
           <main>
-          <h1>heyitsme a great big container</h1>
+          <p>HEY</p>
+            {props.planetData.map(people => <Card people = {''} planets = {people} vehicles = {''}/>)}
           </main>
        )
 }
