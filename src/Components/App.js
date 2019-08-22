@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Container from './Container.js'
 import './App.css';
-import { Route, Link} from "react-router";
+// import {Route, Link} from 'react-router';
 
 class App extends Component {
   constructor() {
@@ -51,7 +51,11 @@ return Promise.all(promises);
         <header className="App-header">
           <h1>WookieBox</h1>
         </header>
-        <button>Planets</button>
+        <section className="buttonContainer">
+          <button id="chewy">People</button>
+          <button id="deathstar">Planets</button>
+          <button id="spaceship">Vehicle</button>
+        </section>
         <Container peopleData = {this.state.people} planetData = {this.state.planets} vehicleData = {this.state.vehicles}/>
       </div>
 
