@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Container from './Container.js'
 import './App.css';
-// import {Route, Link} from 'react-router';
+import {Route, NavLink} from 'react-router-dom';
+import Card from './Card.js'
 
 class App extends Component {
   constructor() {
@@ -52,11 +53,14 @@ return Promise.all(promises);
           <h1>WookieBox</h1>
         </header>
         <section className="buttonContainer">
-          <button id="chewy">People</button>
-          <button id="deathstar">Planets</button>
+          <NavLink to='/people' className='nav'><button id="chewy">People</button></NavLink>
+          <NavLink to='/planets' className='nav'><button id="chewy">Planets</button></NavLink>
+          <NavLink to='/planets' className='nav'><button id="chewy">Planets</button></NavLink>
+
           <button id="spaceship">Vehicle</button>
         </section>
-        <Container peopleData = {this.state.people} planetData = {this.state.planets} vehicleData = {this.state.vehicles}/>
+        <Route path='/people' render = { () => <Card data = {this.state.people} />} />
+        <Route path='/planets' render = { () => <Card data = {this.state.planets} />} />
       </div>
 
     );
