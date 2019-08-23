@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Container from './Container.js'
 import './App.css';
-// import {Route, Link} from 'react-router';
+import {Route, NavLink} from 'react-router-dom';
+import Card from './Card.js'
 
 class App extends Component {
   constructor() {
@@ -19,7 +20,7 @@ class App extends Component {
   Promise.all([
     fetch("https://swapi.co/api/planets").then(response => response.json()).then(data => this.fetchEverything(data.results, ["residents"])),
     fetch("https://swapi.co/api/people").then(response => response.json()).then(data => this.fetchEverything(data.results, ["species", "homeworld"])),
-    fetch("https://swapi.co/api/vehicles").then(response => response.json()).then(data => data.results),
+    fetch("https://swapi.co/api/vehicles").then(response => response.json()).then(data => this.fetchEverything(data.results, ["films"])),
     fetch("https://swapi.co/api/films").then(response => response.json()).then(data => data.results).then(data => data.map(film => film.opening_crawl))
   ])
   .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlTextArray: data[3]}))
@@ -38,7 +39,7 @@ const promises = dataArray.map(item => {
     }
   })
   return Promise.all(finalData)
-   .then(data => ({data: item, nestedApis: data.flat()}))
+   .then(data => ({...item, [keyArray[0]]: data[0][0]}))
    .catch(error => console.log(error));
 });
 return Promise.all(promises);
@@ -52,11 +53,13 @@ return Promise.all(promises);
           <h1>WookieBox</h1>
         </header>
         <section className="buttonContainer">
-          <button id="chewy">People</button>
-          <button id="deathstar">Planets</button>
-          <button id="spaceship">Vehicle</button>
+          <NavLink to='/people' className='nav'><button id="people">People</button></NavLink>
+          <NavLink to='/planets' className='nav'><button id="planets">Planets</button></NavLink>
+          <NavLink to='/vehicles' className='nav'><button id="vehicles">Vehicles</button></NavLink>
         </section>
-        <Container peopleData = {this.state.people} planetData = {this.state.planets} vehicleData = {this.state.vehicles}/>
+        <Route path='/people' render = { () => <Card data = {this.state.people} />} />
+        <Route path='/planets' render = { () => <Card data = {this.state.planets} />} />
+        <Route path='/vehicles' render = { () => <Card data = {this.state.vehicles} />} />
       </div>
 
     );

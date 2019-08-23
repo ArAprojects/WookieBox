@@ -1,21 +1,40 @@
 import React from 'react'
-import './Container.js'
+import { Link } from 'react-router-dom'
 
-const Card = (props) => {
-    if (!props.planets && !props.vehicles) {
+
+const Card = ( {data} ) => {
+  console.log("hey", data)
+    const displayCards = data.map(card => {
+      const { name, population, species } = card;
+
+      const notDefined = (key, type) => {
+        if(key === undefined) {
+          return ''
+        }
+        else {
+
+          return ( <p>{key.name}</p>)
+        }
+      }
+
+
       return (
-          <section>
-            {props.people.data.name && <p>Name: {props.people.data.name}</p>}
-          </section>
+        <div>
+        {name && <p>Name: {name}</p>}
+        {notDefined(species, name)}
+        {population && <p>population: {population}</p>}
+        </div>
       )
-    } else if (!props.people && !props.vehicles)
-  return (
-      <section>
-        {props.planets.data.name && <p>Name: {props.planets.data.name}</p>}
-      </section>
-  )
+    });
 
-
+    return (
+    <div>
+      <h1>Creatures!</h1>
+      {displayCards}
+    </div>
+  );
 }
+
+
 
 export default Card
