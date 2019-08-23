@@ -39,7 +39,7 @@ const promises = dataArray.map(item => {
     }
   })
   return Promise.all(finalData)
-   .then(data => ({...item, [keyArray[0]]: data[0][0]}))
+   .then(data => ({...item, [keyArray[0]]: data[0].flat(), [keyArray[1]]: data[1]}))
    .catch(error => console.log(error));
 });
 return Promise.all(promises);
