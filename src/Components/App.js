@@ -39,7 +39,7 @@ const promises = dataArray.map(item => {
     }
   })
   return Promise.all(finalData)
-   .then(data => ({data: item, nestedApis: data.flat()}))
+   .then(data => ({...item, [keyArray[0]]: data[0][0]}))
    .catch(error => console.log(error));
 });
 return Promise.all(promises);

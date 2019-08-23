@@ -5,10 +5,24 @@ import { Link } from 'react-router-dom'
 const Card = ( {data} ) => {
   console.log("hey", data)
     const displayCards = data.map(card => {
-      const { data, name } = card;
+      const { name, population, species } = card;
+
+      const notDefined = (key, type) => {
+        if(key === undefined) {
+          return ''
+        }
+        else {
+
+          return ( <p>{key.name}</p>)
+        }
+      }
+
+
       return (
         <div>
-        <p>{ data.name}</p>
+        {name && <p>Name: {name}</p>}
+        {notDefined(species, name)}
+        {population && <p>population: {population}</p>}
         </div>
       )
     });
