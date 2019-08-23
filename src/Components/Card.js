@@ -6,23 +6,20 @@ const Card = ( {data} ) => {
   console.log("hey", data)
     const displayCards = data.map(card => {
       const { name, population, species } = card;
-
-      const notDefined = (key, type) => {
-        if(key === undefined) {
-          return ''
+        const notDefined = (key, type) => {
+          if(key === undefined) {
+            return ''
+          }
+          else {
+            return key[type]
+          }
         }
-        else {
-
-          return ( <p>{key.name}</p>)
-        }
-      }
-
 
       return (
         <div>
         {name && <p>Name: {name}</p>}
-        {notDefined(species, name)}
-        {population && <p>population: {population}</p>}
+        {notDefined(species, "name") && <p>Species: {notDefined(species, "name")}</p>}
+        {population && <p>Population: {population}</p>}
         </div>
       )
     });
