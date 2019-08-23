@@ -11,7 +11,7 @@ const Card = ( {data} ) => {
             return ''
           }
           else {
-            return key[type]
+            return key[0][type]
           }
         }
 
