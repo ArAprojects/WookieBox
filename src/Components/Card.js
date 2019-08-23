@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'
 const Card = ( {data} ) => {
   console.log("hey", data)
     const displayCards = data.map(card => {
-      const { data } = card;
+      const { data, name } = card;
       return (
         <div>
-        <p>{ data.name }</p>
+        <p>{ data.name}</p>
         </div>
       )
     });
