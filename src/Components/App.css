@@ -29,9 +29,26 @@ header {
   font-size: 100px;
 }
 
+.buttonContainer {
+display: flex;
+justify-content: center;
+}
+
+input {
+  height: 265px;
+  width: 265px;
+  border: none;
+}
+
+
 #people {
   background: url(/../wookie.png) no-repeat;
-  object-fit: cover;
-  height: 261px;
-  width: 262px;
+}
+
+#planets {
+  background: url(/../death-star.png) no-repeat;
+}
+
+#vehicles {
+  background: url(/../star-wars-vehicle.png) no-repeat;
 }

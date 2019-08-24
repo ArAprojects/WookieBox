@@ -55,9 +55,9 @@ return Promise.all(promises);
         </header>
         <section className="buttonContainer">
           <img/>
-          <NavLink to='/people' className='nav'><input type="submit" id="people" value="People"></input></NavLink>
-          <NavLink to='/planets' className='nav'><button id="planets">Planets</button></NavLink>
-          <NavLink to='/vehicles' className='nav'><button id="vehicles">Vehicles</button></NavLink>
+          <NavLink to='/people' className='nav'><input type="submit" id="people" value=""></input></NavLink>
+          <NavLink to='/planets' className='nav'><input type="submit" id="planets" value=""></input></NavLink>
+          <NavLink to='/vehicles' className='nav'><input type="submit" id="vehicles" value=""></input></NavLink>
         </section>
         <section>
         <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} />} />
