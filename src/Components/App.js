@@ -22,9 +22,8 @@ class App extends Component {
     fetch("https://swapi.co/api/people").then(response => response.json()).then(data => this.fetchEverything(data.results, ["species", "homeworld"])),
     fetch("https://swapi.co/api/vehicles").then(response => response.json()).then(data => this.fetchEverything(data.results, ["films"])),
     fetch("https://swapi.co/api/films").then(response => response.json()).then(data => data.results)
-    // fetch("https://swapi.co/api/films").then(response => response.json()).then(data => data.results).then(data => data.map(film => film.opening_crawl))
   ])
-  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlText: data[3][`${Math.floor(Math.random() * Math.floor(8))}`]}))
+  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlText: data[3][`${Math.floor(Math.random() * Math.floor(7))}`]}))
 }
 
 
