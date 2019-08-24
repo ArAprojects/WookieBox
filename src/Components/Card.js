@@ -4,8 +4,7 @@ import './Card.css'
 
 
 const Card = ( {data} ) => {
-  console.log("hey", data)
-    const displayCards = data.map(card => {
+    const displayCards = typeof data === 'string' ? <div className="scrollText"><p>{data}</p></div> : data.map(card => {
       const { name, population, species } = card;
         const notDefined = (key, type) => {
           if(key === undefined) {

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Container from './Container.js'
 import './App.css';
 import {Route, NavLink} from 'react-router-dom';
-import Card from './Card.js'
+// import Home from './Home'
+import Card from './Card'
 import './Card.css'
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
     fetch("https://swapi.co/api/vehicles").then(response => response.json()).then(data => this.fetchEverything(data.results, ["films"])),
     fetch("https://swapi.co/api/films").then(response => response.json()).then(data => data.results).then(data => data.map(film => film.opening_crawl))
   ])
-  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlTextArray: data[3]}))
+  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlTextArray: data[3][`${Math.floor(Math.random() * Math.floor(8))}`]}))
 }
 
 
@@ -54,12 +55,12 @@ return Promise.all(promises);
           <h1>WookieBox</h1>
         </header>
         <section className="buttonContainer">
-          <img/>
           <NavLink to='/people' className='nav'><input type="submit" id="people" value=""></input></NavLink>
           <NavLink to='/planets' className='nav'><input type="submit" id="planets" value=""></input></NavLink>
           <NavLink to='/vehicles' className='nav'><input type="submit" id="vehicles" value=""></input></NavLink>
         </section>
         <section>
+        <Route exact path="/" render = {() => <Card className="Card" data={this.state.crawlTextArray}/>}/>
         <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} />} />
         <Route path='/planets' render = { () => <Card className="Card" data = {this.state.planets} />} />
         <Route path='/vehicles' render = { () => <Card className="Card" data = {this.state.vehicles} />} />
