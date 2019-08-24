@@ -1,5 +1,6 @@
-header {
-  text-align: center;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .App {
@@ -11,4 +12,22 @@ header {
   left: 0;
   right: 0;
   overflow: auto;
+}
+
+@font-face {
+  font-family: 'distant_galaxyregular';
+  src: url('/../distgrg_-webfont.woff2') format('woff2'),
+       url('/../distgrg_-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  text-align: center;
+}
+
+.App-header {
+  font-family: 'distant_galaxyregular';
+  color: yellow;
+  font-size: 100px;
 }
