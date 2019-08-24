@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-.App {
+body {
   background: url('/../swapi-background.jpg');
   background-attachment: fixed;
   position: absolute;
@@ -24,10 +24,14 @@
 
 header {
   text-align: center;
-}
-
-.App-header {
   font-family: 'distant_galaxyregular';
   color: yellow;
   font-size: 100px;
+}
+
+#people {
+  background: url(/../wookie.png) no-repeat;
+  object-fit: cover;
+  height: 261px;
+  width: 262px;
 }

@@ -3,6 +3,7 @@ import Container from './Container.js'
 import './App.css';
 import {Route, NavLink} from 'react-router-dom';
 import Card from './Card.js'
+import './Card.css'
 
 class App extends Component {
   constructor() {
@@ -53,13 +54,16 @@ return Promise.all(promises);
           <h1>WookieBox</h1>
         </header>
         <section className="buttonContainer">
-          <NavLink to='/people' className='nav'><button id="people">People</button></NavLink>
+          <img/>
+          <NavLink to='/people' className='nav'><input type="submit" id="people" value="People"></input></NavLink>
           <NavLink to='/planets' className='nav'><button id="planets">Planets</button></NavLink>
           <NavLink to='/vehicles' className='nav'><button id="vehicles">Vehicles</button></NavLink>
         </section>
-        <Route path='/people' render = { () => <Card data = {this.state.people} />} />
-        <Route path='/planets' render = { () => <Card data = {this.state.planets} />} />
-        <Route path='/vehicles' render = { () => <Card data = {this.state.vehicles} />} />
+        <section>
+        <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} />} />
+        <Route path='/planets' render = { () => <Card className="Card" data = {this.state.planets} />} />
+        <Route path='/vehicles' render = { () => <Card className="Card" data = {this.state.vehicles} />} />
+        </section>
       </div>
 
     );
