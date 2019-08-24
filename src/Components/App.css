@@ -1,6 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: 'distant_galaxyregular';
 }
 
 body {
@@ -24,7 +25,7 @@ body {
 
 header {
   text-align: center;
-  font-family: 'distant_galaxyregular';
+  /* font-family: 'distant_galaxyregular'; */
   color: yellow;
   font-size: 100px;
 }
@@ -35,6 +36,17 @@ justify-content: center;
 flex-basis: auto;
 margin: auto;
 width: 100%;
+margin-bottom: 25px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-right: 100px;
+  margin: auto;
+  text-decoration: none;
 }
 
 input {
@@ -42,8 +54,15 @@ input {
   width: 275px;
   padding: 0;
   border: none;
-  margin: auto;
-  margin-right: 100px;
+}
+
+button {
+  border: none;
+  color: yellow;
+  font-size: 45px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
 }
 
 

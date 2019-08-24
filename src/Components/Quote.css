@@ -1,0 +1,15 @@
+.scrollText {
+    background-color: lightgrey;
+    height: 300px;
+    width: 75%;
+    margin: auto;
+    opacity: 0.7;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+p {
+    font-family: 'distant_galaxyregular'; 
+    text-align: center;
+    font-size: 32px;
+}
