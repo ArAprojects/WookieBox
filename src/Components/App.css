@@ -32,12 +32,18 @@ header {
 .buttonContainer {
 display: flex;
 justify-content: center;
+flex-basis: auto;
+margin: auto;
+width: 100%;
 }
 
 input {
-  height: 265px;
-  width: 265px;
+  height: 275px;
+  width: 275px;
+  padding: 0;
   border: none;
+  margin: auto;
+  margin-right: 100px;
 }
 
 
