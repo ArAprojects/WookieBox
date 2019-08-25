@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'distant_galaxyregular';
+    src: url('/../distgrg_-webfont.woff2') format('woff2'),
+         url('/../distgrg_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.Card {
+    height: 350px;
+    width: 20%;
+    border-radius: 15px;
+    background-color: lightgrey;
+    opacity: 0.7;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+  }

@@ -1,7 +1,79 @@
-header {
-  text-align: center;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'distant_galaxyregular';
 }
 
-.App {
-  background-color: aliceblue;
+body {
+  background: url('/../swapi-background.jpg');
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+@font-face {
+  font-family: 'distant_galaxyregular';
+  src: url('/../distgrg_-webfont.woff2') format('woff2'),
+       url('/../distgrg_-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  text-align: center;
+  /* font-family: 'distant_galaxyregular'; */
+  color: yellow;
+  font-size: 100px;
+}
+
+.buttonContainer {
+display: flex;
+justify-content: center;
+flex-basis: auto;
+margin: auto;
+width: 100%;
+margin-bottom: 25px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-right: 100px;
+  margin: auto;
+  text-decoration: none;
+}
+
+input {
+  height: 275px;
+  width: 275px;
+  padding: 0;
+  border: none;
+}
+
+button {
+  border: none;
+  color: yellow;
+  font-size: 45px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+
+#people {
+  background: url(/../wookie.png) no-repeat;
+}
+
+#planets {
+  background: url(/../death-star.png) no-repeat;
+}
+
+#vehicles {
+  background: url(/../star-wars-vehicle.png) no-repeat;
 }
