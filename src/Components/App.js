@@ -23,7 +23,7 @@ class App extends Component {
     fetch("https://swapi.co/api/vehicles").then(response => response.json()).then(data => data.results),
     fetch("https://swapi.co/api/films").then(response => response.json()).then(data => data.results)
   ])
-  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlText: data[3][1]}))
+  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlText: data[3][`${Math.floor(Math.random() * Math.floor(7))}`]}))
 }
 
 fetchEverything = (dataArray, keyArray) => {
