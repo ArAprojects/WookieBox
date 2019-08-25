@@ -5,7 +5,7 @@ import './Card.css'
 
 const Card = ( {data} ) => {
     const displayCards = data.map(card => {
-      const { name, population, species, homeworld, residents, terrain, climate} = card;
+      const { name, population, species, homeworld, residents, terrain, climate, model, vehicle_class, passengers  } = card;
         const notDefined = (keys, type) => {
           if(keys === undefined) {
             return ''
@@ -22,12 +22,14 @@ const Card = ( {data} ) => {
         {name && <p>Name: {name}</p>}
         {terrain && <p>Terrain: {terrain}</p>}
         {climate && <p>Climate: {climate}</p>}
+        {model && <p>Model: {model}</p>}
+        {vehicle_class && <p>Class: {vehicle_class}</p>}
+        {passengers && <p>Passenger Capacity: {passengers}</p>}
         {notDefined(species, "name") && <p>Species: {notDefined(species, "name")}</p>}
         {notDefined(homeworld, "name") && <p>homeworld: {notDefined(homeworld, "name")}</p>}
-        {notDefined(homeworld, "language") && <p>language: {notDefined(homeworld, "language")}</p>}
+        {notDefined(species, "language") && <p>language: {notDefined(species, "language")}</p>}
         {notDefined(residents, "name") && <p>Residents: {notDefined(residents, "name")}</p>}
         {population && <p>Population: {population}</p>}
-
         </div>
       )
     });
