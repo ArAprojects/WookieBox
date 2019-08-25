@@ -20,10 +20,10 @@ class App extends Component {
   Promise.all([
     fetch("https://swapi.co/api/planets").then(response => response.json()).then(data => this.fetchEverything(data.results, ["residents"])),
     fetch("https://swapi.co/api/people").then(response => response.json()).then(data => this.fetchEverything(data.results, ["species", "homeworld"])),
-    fetch("https://swapi.co/api/vehicles").then(response => response.json()).then(data => this.fetchEverything(data.results, ["films"])),
+    fetch("https://swapi.co/api/vehicles").then(response => response.json()).then(data => data.results),
     fetch("https://swapi.co/api/films").then(response => response.json()).then(data => data.results)
   ])
-  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlText: data[3][`${Math.floor(Math.random() * Math.floor(7))}`]}))
+  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlText: data[3][1]}))
 }
 
 
@@ -58,7 +58,7 @@ return Promise.all(promises);
           <NavLink to='/vehicles' className='nav'><input type="submit" id="vehicles" value=""/><button type="submit">Vehicles</button></NavLink>
         </section>
         <section>
-        <Route exact path="/" render = {() => <Quote className="Quote" data={this.state.crawlText}/>}/>
+        <Route exact path="/" render = {() => <Quote className="Quote" data = {this.state.crawlText}/>}/>
         <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} />} />
         <Route path='/planets' render = { () => <Card className="Card" data = {this.state.planets} />} />
         <Route path='/vehicles' render = { () => <Card className="Card" data = {this.state.vehicles} />} />
