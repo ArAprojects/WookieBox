@@ -77,3 +77,7 @@ button {
 #vehicles {
   background: url(/../star-wars-vehicle.png) no-repeat;
 }
+
+#favorites {
+  background: url(/../star.png) no-repeat;
+}
