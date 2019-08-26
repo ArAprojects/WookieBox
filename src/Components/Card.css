@@ -16,8 +16,6 @@
     margin-bottom: 40px;
     margin-left: 5px;
     margin-right: 5px;
-    display: flex;
-    flex-flow: column;
     justify-content: space-evenly;
     overflow: scroll;
 }
