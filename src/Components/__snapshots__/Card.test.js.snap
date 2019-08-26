@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should return a snapshot of a card object with people data 1`] = `
+<div
+  className="cardContainer"
+>
+  <div
+    className="Card"
+  >
+    <p>
+      Name: 
+      Luke Skywalker
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card should return a snapshot of a card object with planet data 1`] = `
+<div
+  className="cardContainer"
+>
+  <div
+    className="Card"
+  >
+    <p>
+      Name: 
+      Dagobah
+    </p>
+    <p>
+      Terrain: 
+      swamp, jungles
+    </p>
+    <p>
+      Climate: 
+      murky
+    </p>
+    <p>
+      Population: 
+      unknown
+    </p>
+    <p>
+      Residents: 
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Card should return a snapshot of a card object with planet data 2`] = `
+<div
+  className="cardContainer"
+>
+  <div
+    className="Card"
+  >
+    <p>
+      Name: 
+      Dagobah
+    </p>
+    <p>
+      Terrain: 
+      swamp, jungles
+    </p>
+    <p>
+      Climate: 
+      murky
+    </p>
+    <p>
+      Population: 
+      unknown
+    </p>
+    <p>
+      Residents: 
+    </p>
+  </div>
+</div>
+`;
