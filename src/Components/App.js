@@ -44,8 +44,24 @@ fetchNested = (dataArray, keyArray) => {
   return Promise.all(promises);
 };
 
+
+toggleFavorite = (favorite) => {
+  console.log("heysa", favorite)
+    if(!favorite.favorite) {
+      favorite["favorite"] = true;
+    this.setState({ favorites: [...this.state.favorites, favorite] });
+
+  } else {
+    console.log("i did it!!!")
+    let index = this.state.favorites.indexOf(favorite);
+    this.state.favorites.splice(index, 1);
+    this.setState({...this.state.favorites})
+    favorite["favorite"] = false;
+  }
+
+}
+
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
@@ -59,10 +75,10 @@ fetchNested = (dataArray, keyArray) => {
         </section>
         <section>
           <Route exact path="/" render = {() => <Quote className="Quote" data = {this.state.crawlText}/>}/>
-          <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} />} />
-          <Route path='/planets' render = { () => <Card className="Card" data = {this.state.planets} />} />
-          <Route path='/vehicles' render = { () => <Card className="Card" data = {this.state.vehicles} />} />
-          <Route path='/favorites' render = { () => <Card className="Card" data = {this.state.favorites} />} />
+          <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} toggleFavorite = {this.toggleFavorite} />} />
+          <Route path='/planets' render = { () => <Card className="Card" data = {this.state.planets} toggleFavorite = {this.toggleFavorite} favorites = {this.state.favorites} />} />
+          <Route path='/vehicles' render = { () => <Card className="Card" data = {this.state.vehicles} toggleFavorite = {this.toggleFavorite} />} />
+          <Route path='/favorites' render = { () => <Card className="Card" data = {this.state.favorites} toggleFavorite = {this.toggleFavorite}/>} />
         </section>
       </div>
 
