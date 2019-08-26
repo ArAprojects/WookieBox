@@ -4,7 +4,7 @@ import './Card.css'
 const uuidv4 = require('uuid/v4');
 
 
-const Card = ( {data} ) => {
+const Card = ( {data, toggleFavorite} ) => {
     const displayCards = data.map(card => {
       const { name, population, species, homeworld, residents, terrain, climate, model, vehicle_class, passengers } = card;
       card["id"] = uuidv4()
@@ -21,11 +21,13 @@ const Card = ( {data} ) => {
           }
         }
 
+
+
       return (
         <section className="Card" key={uuidv4()}>
           <div className="name-and-button">
             <p>{name}</p>
-            <button>X</button>
+             <button onClick={() => toggleFavorite(card) }>Favorite</button>
           </div>
           <div className="content">
             {terrain && <p>Terrain: {terrain}</p>}
