@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote should match the film crawl text 1`] = `
+<div
+  className="scrollText"
+>
+  <p>
+    Luke Skywalker has...
+  </p>
+  <br />
+  <p>
+    Return of the Jedi
+     
+    1983-05-25
+  </p>
+</div>
+`;
