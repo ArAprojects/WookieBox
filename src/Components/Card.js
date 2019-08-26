@@ -3,12 +3,10 @@ import React from 'react'
 import './Card.css'
 const uuidv4 = require('uuid/v4');
 
-
-const Card = ( {data, toggleFavorite} ) => {
+const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
     const displayCards = data.map(card => {
       const { name, population, species, homeworld, residents, terrain, climate, model, vehicle_class, passengers } = card;
       card["id"] = uuidv4()
-      console.log(card)
         const notDefined = (keys, type) => {
           if(keys === undefined) {
             return ''
@@ -22,12 +20,11 @@ const Card = ( {data, toggleFavorite} ) => {
         }
 
 
-
       return (
         <section className="Card" key={uuidv4()}>
           <div className="name-and-button">
             <p>{name}</p>
-             <button onClick={() => toggleFavorite(card) }>Favorite</button>
+             <button onClick={() => toggleFavorite(card) }><h5>X</h5></button>
           </div>
           <div className="content">
             {terrain && <p>Terrain: {terrain}</p>}
