@@ -8,6 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      isLoading: false,
       people: [],
       planets: [],
       vehicles: [],
@@ -17,13 +18,14 @@ class App extends Component {
   }
 
   componentDidMount() {
+  this.setState({isLoading: true})
   Promise.all([
     fetch("https://swapi.co/api/planets").then(response => response.json()).then(data => this.fetchEverything(data.results, ["residents"])),
     fetch("https://swapi.co/api/people").then(response => response.json()).then(data => this.fetchEverything(data.results, ["species", "homeworld"])),
     fetch("https://swapi.co/api/vehicles").then(response => response.json()).then(data => data.results),
     fetch("https://swapi.co/api/films").then(response => response.json()).then(data => data.results)
   ])
-  .then(data => this.setState({people: data[1], planets: data[0], vehicles: data[2], crawlText: data[3][`${Math.floor(Math.random() * Math.floor(7))}`]}))
+  .then(data => this.setState({isLoading: false, people: data[1], planets: data[0], vehicles: data[2], crawlText: data[3][`${Math.floor(Math.random() * Math.floor(7))}`]}))
 }
 
 fetchEverything = (dataArray, keyArray) => {
@@ -44,7 +46,6 @@ fetchEverything = (dataArray, keyArray) => {
 };
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
@@ -56,13 +57,13 @@ fetchEverything = (dataArray, keyArray) => {
           <NavLink to='/vehicles' className='nav'><input type="submit" id="vehicles" value=""/><button type="submit">Vehicles</button></NavLink>
           <NavLink to='/favorites' className='nav'><input type='submit' id="favorites" values=""/><button type="submit">Favorites</button></NavLink>
         </section>
+        {/* {this.state.isLoading === true && <div className="Loading"><img src="/../public/circles.svg" alt=""/></div>} */}
         <section>
-        <Route exact path="/" render = {() => <Quote className="Quote" data = {this.state.crawlText}/>}/>
-        <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} />} />
-        <Route path='/planets' render = { () => <Card className="Card" data = {this.state.planets} />} />
-        <Route path='/vehicles' render = { () => <Card className="Card" data = {this.state.vehicles} />} />
-        <Route path='/favorites' render = { () => <Card className="Card" data = {this.state.favorites} />} />
-
+          <Route exact path="/" render = {() => <Quote className="Quote" data = {this.state.crawlText}/>}/>
+          <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} />} />
+          <Route path='/planets' render = { () => <Card className="Card" data = {this.state.planets} />} />
+          <Route path='/vehicles' render = { () => <Card className="Card" data = {this.state.vehicles} />} />
+          <Route path='/favorites' render = { () => <Card className="Card" data = {this.state.favorites} />} />
         </section>
       </div>
 

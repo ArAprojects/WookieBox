@@ -65,7 +65,6 @@ button {
   border: none;
 }
 
-
 #people {
   background: url(/../wookie.png) no-repeat;
 }
@@ -80,4 +79,10 @@ button {
 
 #favorites {
   background: url(/../star.png) no-repeat;
+}
+
+.Loading {
+  height: 200px;
+  width: 200px;
+  color: yellow;
 }
