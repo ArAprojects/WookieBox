@@ -1,12 +1,14 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
 import './Card.css'
+const uuidv4 = require('uuid/v4');
 
 
 const Card = ( {data} ) => {
     const displayCards = data.map(card => {
-      const { name, population, species, homeworld, residents, terrain, climate, model, vehicle_class, passengers  } = card;
-
+      const { name, population, species, homeworld, residents, terrain, climate, model, vehicle_class, passengers } = card;
+      card["id"] = uuidv4()
+      console.log(card)
         const notDefined = (keys, type) => {
           if(keys === undefined) {
             return ''
@@ -20,7 +22,7 @@ const Card = ( {data} ) => {
         }
 
       return (
-        <section className="Card">
+        <section className="Card" key={uuidv4()}>
           <div className="name-and-button">
             <p>{name}</p>
             <button>X</button>

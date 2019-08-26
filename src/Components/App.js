@@ -44,6 +44,10 @@ fetchNested = (dataArray, keyArray) => {
   return Promise.all(promises);
 };
 
+toggleFavorite(favorite) {
+ this.setState({ favorites: [...this.state.favorites, favorite] });
+}
+
   render() {
     console.log(this.state)
     return (
@@ -62,7 +66,7 @@ fetchNested = (dataArray, keyArray) => {
           <Route path='/people' render = { () => <Card className="Card" data = {this.state.people} />} />
           <Route path='/planets' render = { () => <Card className="Card" data = {this.state.planets} />} />
           <Route path='/vehicles' render = { () => <Card className="Card" data = {this.state.vehicles} />} />
-          <Route path='/favorites' render = { () => <Card className="Card" data = {this.state.favorites} />} />
+          <Route path='/favorites' render = { () => <Card className="Card" data = {this.state.favorites}  />} />
         </section>
       </div>
 
