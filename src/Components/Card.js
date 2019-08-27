@@ -23,7 +23,7 @@ const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
         <section className="Card" key={uuidv4()}>
           <div className="name-and-button">
             <p>{name}</p>
-             <button onClick={() => toggleFavorite(card) }><h5>X</h5></button>
+             <button onClick={() => toggleFavorite(card) }><h5><img src="/../star.png" alt="star"></img></h5></button>
           </div>
           <div className="content">
             {terrain && <p>Terrain: {terrain}</p>}

@@ -36,3 +36,15 @@ p {
     justify-content: space-evenly;
     flex-flow: row wrap;
   }
+
+  .favorite {
+    background: url(/../star.png) no-repeat;
+  }
+
+  img {
+    height: 35px;
+  }
+
+  img:active {
+    background-color: red;
+  }
