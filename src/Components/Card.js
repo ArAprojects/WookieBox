@@ -6,7 +6,6 @@ const uuidv4 = require('uuid/v4');
 const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
     const displayCards = data.map(card => {
       const { name, population, species, homeworld, residents, terrain, climate, model, vehicle_class, passengers } = card;
-      card["id"] = uuidv4()
         const notDefined = (keys, type) => {
           if(keys === undefined) {
             return ''
