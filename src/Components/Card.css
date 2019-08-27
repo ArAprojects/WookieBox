@@ -44,3 +44,7 @@ p {
   img {
     height: 35px;
   }
+
+  hr {
+    border: 2px solid black;
+  }

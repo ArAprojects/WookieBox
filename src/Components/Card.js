@@ -29,6 +29,7 @@ const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
                 </h5>
               </button>
           </div>
+          <hr/>
           <div className="content">
             {terrain && <p>Terrain: {terrain}</p>}
             {climate && <p>Climate: {climate}</p>}
