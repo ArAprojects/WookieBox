@@ -46,13 +46,11 @@ fetchNested = (dataArray, keyArray) => {
 
 
 toggleFavorite = (favorite) => {
-  console.log("heysa", favorite)
     if(!favorite.favorite) {
       favorite["favorite"] = true;
     this.setState({ favorites: [...this.state.favorites, favorite] });
 
   } else {
-    console.log("i did it!!!")
     let index = this.state.favorites.indexOf(favorite);
     this.state.favorites.splice(index, 1);
     this.setState({...this.state.favorites})
