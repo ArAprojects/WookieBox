@@ -25,6 +25,9 @@ p {
   margin: 10px;
 }
 
+.residents {
+  font-size: 1em;
+}
 
 .name-and-button {
   display: flex;
