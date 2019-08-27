@@ -11,4 +11,15 @@ ReactJS, JSX, TDD, Enzyme/Jest
 
 To run the application, first clone down this repo. Then, run `npm install`, followed by `npm start`, to initialize the on server at [http://localhost:3000](http://localhost:3000).
 
-### Images
+### Image: Main Page
+
+![Image description](https://github.com/ArAprojects/WookieBox/blob/master/public/main_page.png)
+
+### Image: People Page
+
+![Image description](https://github.com/ArAprojects/WookieBox/blob/master/public/people_page.png)
+
+### Image: Favorites Page
+
+![Image description](https://github.com/ArAprojects/WookieBox/blob/master/public/favorites_page.png)
+
