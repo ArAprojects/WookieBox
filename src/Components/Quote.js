@@ -11,6 +11,7 @@ const Quote = ({data}) => {
       }
       else
     return (
+        <section className="box">
           <div className="crawl-container">
             <div className="crawl">
                 <p>{data.opening_crawl}</p>
@@ -18,6 +19,7 @@ const Quote = ({data}) => {
                 <p>{data.title} {data.release_date}</p>
             </div>
           </div>
+        </section>
     )
 };
 
