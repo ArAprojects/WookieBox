@@ -18,7 +18,6 @@ const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
           }
         }
 
-
       return (
         <section className="Card" key={uuidv4()}>
           <div className="name-and-button">

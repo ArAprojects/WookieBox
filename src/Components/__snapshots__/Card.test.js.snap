@@ -4,14 +4,28 @@ exports[`Card should return a snapshot of a card object with people data 1`] = `
 <div
   className="cardContainer"
 >
-  <div
+  <section
     className="Card"
+    key="d2da649f-60d6-4d68-9e98-2b37558e361c"
   >
-    <p>
-      Name: 
-      Luke Skywalker
-    </p>
-  </div>
+    <div
+      className="name-and-button"
+    >
+      <p>
+        Luke Skywalker
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        <h5>
+          X
+        </h5>
+      </button>
+    </div>
+    <div
+      className="content"
+    />
+  </section>
 </div>
 `;
 
@@ -19,29 +33,44 @@ exports[`Card should return a snapshot of a card object with planet data 1`] = `
 <div
   className="cardContainer"
 >
-  <div
+  <section
     className="Card"
+    key="49778777-de8e-470c-92c8-809134d87c58"
   >
-    <p>
-      Name: 
-      Dagobah
-    </p>
-    <p>
-      Terrain: 
-      swamp, jungles
-    </p>
-    <p>
-      Climate: 
-      murky
-    </p>
-    <p>
-      Population: 
-      unknown
-    </p>
-    <p>
-      Residents: 
-    </p>
-  </div>
+    <div
+      className="name-and-button"
+    >
+      <p>
+        Dagobah
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        <h5>
+          X
+        </h5>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <p>
+        Terrain: 
+        swamp, jungles
+      </p>
+      <p>
+        Climate: 
+        murky
+      </p>
+      <p>
+        Population: 
+        unknown
+      </p>
+      <p>
+        Residents: 
+      </p>
+    </div>
+  </section>
 </div>
 `;
 
@@ -49,28 +78,43 @@ exports[`Card should return a snapshot of a card object with planet data 2`] = `
 <div
   className="cardContainer"
 >
-  <div
+  <section
     className="Card"
+    key="b0b63cec-d3d6-405d-bb04-4f4b49da59b8"
   >
-    <p>
-      Name: 
-      Dagobah
-    </p>
-    <p>
-      Terrain: 
-      swamp, jungles
-    </p>
-    <p>
-      Climate: 
-      murky
-    </p>
-    <p>
-      Population: 
-      unknown
-    </p>
-    <p>
-      Residents: 
-    </p>
-  </div>
+    <div
+      className="name-and-button"
+    >
+      <p>
+        Dagobah
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        <h5>
+          X
+        </h5>
+      </button>
+    </div>
+    <div
+      className="content"
+    >
+      <p>
+        Terrain: 
+        swamp, jungles
+      </p>
+      <p>
+        Climate: 
+        murky
+      </p>
+      <p>
+        Population: 
+        unknown
+      </p>
+      <p>
+        Residents: 
+      </p>
+    </div>
+  </section>
 </div>
 `;

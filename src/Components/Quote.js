@@ -2,7 +2,6 @@ import React from 'react';
 import './Quote.css'
 
 const Quote = ({data}) => {
-  console.log("quote", data)
   if (data.opening_crawl === undefined) {
     return (
       <div className="scrollText">
