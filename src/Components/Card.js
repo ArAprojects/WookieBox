@@ -23,7 +23,11 @@ const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
         <section className="Card" key={uuidv4()}>
           <div className="name-and-button">
             <p>{name}</p>
-             <button onClick={() => toggleFavorite(card) }><h5><img src="/../star.png" alt="star"></img></h5></button>
+             <button onClick={() => toggleFavorite(card) }>
+               <h5>
+                 {card.favorite ? <img src="/../fav_star.png" alt="fav-star"/> : <img src="/../star.png" alt="star-vector"/>}
+                </h5>
+              </button>
           </div>
           <div className="content">
             {terrain && <p>Terrain: {terrain}</p>}
@@ -32,8 +36,8 @@ const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
             {vehicle_class && <p>Class: {vehicle_class}</p>}
             {passengers && <p>Passenger Capacity: {passengers}</p>}
             {notDefined(species, "name") && <p>Species: {notDefined(species, "name")}</p>}
-            {notDefined(homeworld, "name") && <p>homeworld: {notDefined(homeworld, "name")}</p>}
-            {notDefined(species, "language") && <p>language: {notDefined(species, "language")}</p>}
+            {notDefined(homeworld, "name") && <p>Homeworld: {notDefined(homeworld, "name")}</p>}
+            {notDefined(species, "language") && <p>Language: {notDefined(species, "language")}</p>}
             {population && <p>Population: {population}</p>}
             {notDefined(residents, "name") && <p>Residents: {notDefined(residents, "name")}</p>}
           </div>

@@ -44,7 +44,3 @@ p {
   img {
     height: 35px;
   }
-
-  img:active {
-    background-color: red;
-  }
