@@ -69,7 +69,7 @@ toggleFavorite = (favorite) => {
           <NavLink to='/people' className='nav'><input type="submit" id="people" value=""/><button type="submit">People</button></NavLink>
           <NavLink to='/planets' className='nav'><input type="submit" id="planets" value=""/><button type="submit">Planets</button></NavLink>
           <NavLink to='/vehicles' className='nav'><input type="submit" id="vehicles" value=""/><button type="submit">Vehicles</button></NavLink>
-          <NavLink to='/favorites' className='nav'><input type='submit' id="favorites" values=""/><button type="submit">Favorites</button></NavLink>
+          <NavLink to='/favorites' className='nav'><input type='submit' id="favorites" values=""/><button type="submit">Favorites({this.state.favorites.length})</button></NavLink>
         </section>
         <section>
           <Route exact path="/" render = {() => <Quote className="Quote" data = {this.state.crawlText}/>}/>

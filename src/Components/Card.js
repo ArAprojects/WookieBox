@@ -6,13 +6,12 @@ const uuidv4 = require('uuid/v4');
 const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
     const displayCards = data.map(card => {
       const { name, population, species, homeworld, residents, terrain, climate, model, vehicle_class, passengers } = card;
-      card["id"] = uuidv4()
         const notDefined = (keys, type) => {
           if(keys === undefined) {
             return ''
           }
           else if (Array.isArray(keys)) {
-            return keys.map(key => key[type])
+            return keys.map(key => <p className="residents">{key[type]}</p>)
           }
           else {
             return keys[type]
@@ -23,8 +22,13 @@ const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
         <section className="Card" key={uuidv4()}>
           <div className="name-and-button">
             <p>{name}</p>
-             <button onClick={() => toggleFavorite(card)}><h5>X</h5></button>
+             <button onClick={() => toggleFavorite(card) }>
+               <h5>
+                 {card.favorite ? <img src="/../fav_star.png" alt="fav-star"/> : <img src="/../star.png" alt="star-vector"/>}
+                </h5>
+              </button>
           </div>
+          <hr/>
           <div className="content">
             {terrain && <p>Terrain: {terrain}</p>}
             {climate && <p>Climate: {climate}</p>}
@@ -32,10 +36,10 @@ const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
             {vehicle_class && <p>Class: {vehicle_class}</p>}
             {passengers && <p>Passenger Capacity: {passengers}</p>}
             {notDefined(species, "name") && <p>Species: {notDefined(species, "name")}</p>}
-            {notDefined(homeworld, "name") && <p>homeworld: {notDefined(homeworld, "name")}</p>}
-            {notDefined(species, "language") && <p>language: {notDefined(species, "language")}</p>}
+            {notDefined(homeworld, "name") && <p>Homeworld: {notDefined(homeworld, "name")}</p>}
+            {notDefined(species, "language") && <p>Language: {notDefined(species, "language")}</p>}
             {population && <p>Population: {population}</p>}
-            {notDefined(residents, "name") && <p>Residents: {notDefined(residents, "name")}</p>}
+            {notDefined(residents, "name") && <p>Residents: {notDefined(residents, "name")}</p>}            
           </div>
         </section>
       )
