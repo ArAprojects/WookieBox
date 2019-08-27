@@ -12,11 +12,15 @@ const Quote = ({data}) => {
       }
       else
     return (
-            <div className="scrollText">
+        <section className="box">
+          <div className="crawl-container">
+            <div className="crawl">
                 <p>{data.opening_crawl}</p>
                 <br/>
                 <p>{data.title} {data.release_date}</p>
             </div>
+          </div>
+        </section>
     )
 };
 

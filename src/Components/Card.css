@@ -17,12 +17,14 @@
     margin-left: 5px;
     margin-right: 5px;
     justify-content: space-evenly;
-    overflow: auto;
+    overflow: scroll;
 }
 
-.content {
-
+p {
+  font-size: 1.8em;
+  margin: 10px;
 }
+
 
 .name-and-button {
   display: flex;
@@ -33,4 +35,16 @@
     display: flex;
     justify-content: space-evenly;
     flex-flow: row wrap;
+  }
+
+  .favorite {
+    background: url(/../star.png) no-repeat;
+  }
+
+  img {
+    height: 35px;
+  }
+
+  img:active {
+    background-color: red;
   }
