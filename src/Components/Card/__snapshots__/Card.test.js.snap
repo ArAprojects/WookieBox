@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should return a snapshot of a card object with people data 1`] = `
+<div
+  className="cardContainer"
+>
+  <section
+    className="Card"
+    key="a44b603e-a0e6-4c3e-901b-f45f2c6799f6"
+  >
+    <div
+      className="name-and-button"
+    >
+      <p>
+        Luke Skywalker
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        <h5>
+          <img
+            alt="star-vector"
+            src="/../star.png"
+          />
+        </h5>
+      </button>
+    </div>
+    <hr />
+    <div
+      className="content"
+    />
+  </section>
+</div>
+`;
+
+exports[`Card should return a snapshot of a card object with planet data 1`] = `
+<div
+  className="cardContainer"
+>
+  <section
+    className="Card"
+    key="c9ba4e59-8072-4696-af86-ea720b96ca84"
+  >
+    <div
+      className="name-and-button"
+    >
+      <p>
+        Dagobah
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        <h5>
+          <img
+            alt="star-vector"
+            src="/../star.png"
+          />
+        </h5>
+      </button>
+    </div>
+    <hr />
+    <div
+      className="content"
+    >
+      <p>
+        Terrain: 
+        swamp, jungles
+      </p>
+      <p>
+        Climate: 
+        murky
+      </p>
+      <p>
+        Population: 
+        unknown
+      </p>
+      <p>
+        Residents: 
+      </p>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Card should return a snapshot of a card object with planet data 2`] = `
+<div
+  className="cardContainer"
+>
+  <section
+    className="Card"
+    key="b18b48d7-6f9f-437f-8295-70f1e0463cf9"
+  >
+    <div
+      className="name-and-button"
+    >
+      <p>
+        Dagobah
+      </p>
+      <button
+        onClick={[Function]}
+      >
+        <h5>
+          <img
+            alt="star-vector"
+            src="/../star.png"
+          />
+        </h5>
+      </button>
+    </div>
+    <hr />
+    <div
+      className="content"
+    >
+      <p>
+        Terrain: 
+        swamp, jungles
+      </p>
+      <p>
+        Climate: 
+        murky
+      </p>
+      <p>
+        Population: 
+        unknown
+      </p>
+      <p>
+        Residents: 
+      </p>
+    </div>
+  </section>
+</div>
+`;
