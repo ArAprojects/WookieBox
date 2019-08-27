@@ -1,9 +1,9 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 import './Card.css'
 const uuidv4 = require('uuid/v4');
 
-const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
+const Card = ( {data, toggleFavorite} ) => {
     const displayCards = data.map(card => {
       const { name, population, species, homeworld, residents, terrain, climate, model, vehicle_class, passengers } = card;
         const notDefined = (keys, type) => {
@@ -52,4 +52,10 @@ const Card = ( {data, toggleFavorite, favoriteStatus} ) => {
   );
 }
 
+
 export default Card
+
+Card.propTypes = {
+  data: PropTypes.array.isRequired,
+  toggleFavorite: PropTypes.func.isRequired
+};

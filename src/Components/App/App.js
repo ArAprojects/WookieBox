@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import {Route, NavLink} from 'react-router-dom';
-import Quote from './Quote'
-import Card from './Card'
+import Quote from '../Quote/Quote'
+import Card from '../Card/Card'
 
 class App extends Component {
   constructor() {
@@ -46,7 +46,6 @@ fetchNested = (dataArray, keyArray) => {
 
 
 toggleFavorite = (favorite) => {
-  console.log(favorite)
   if(!favorite.favorite) {
     favorite["favorite"] = true;
     this.setState({ favorites: [...this.state.favorites, favorite] });
