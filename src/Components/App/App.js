@@ -46,14 +46,8 @@ fetchNested = (dataArray, keyArray) => {
 
 
 toggleFavorite = (favorite) => {
-<<<<<<< HEAD:src/Components/App/App.js
-    if(!favorite.favorite) {
-      favorite["favorite"] = true;
-=======
-  console.log(favorite)
   if(!favorite.favorite) {
     favorite["favorite"] = true;
->>>>>>> master:src/Components/App.js
     this.setState({ favorites: [...this.state.favorites, favorite] });
   } else {
     let index = this.state.favorites.indexOf(favorite);
